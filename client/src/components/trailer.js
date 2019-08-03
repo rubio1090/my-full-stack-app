@@ -29,7 +29,7 @@ export default class Trailer extends Component{
     }
   }
   sendUpdate=(endpoint, dataLoad)=>{
-    const url = `http://127.0.0.1:3030/api/edit/${endpoint}`;
+    const url = `/api/edit/${endpoint}`;
     const data = dataLoad;
     const options = {
       headers : {'content-type' : 'application/json; charset=UTF-8'},
