@@ -90,6 +90,7 @@ export default class Edit extends Component{
     this.showTrailerModal();
   }
   deleteRecord=(obj, typ)=>{
+    // eslint-disable-next-line no-restricted-globals
     let dlt = confirm(`Are you sure you want to delete ${typ} from the list?`);
     let url = `delete/${typ}`;
     let data = {
