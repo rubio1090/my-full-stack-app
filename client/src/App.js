@@ -268,23 +268,23 @@ export default class App extends Component {
     this.getUsers();
   }
   getTrailersList=()=>{
-    fetch('/api/trailers')
+    window.fetch('/api/trailers')
       .then( res => res.json())
       .then( res => this.setState({ trailers : res.data }))
       .then(this.updateChartsData())
   }
   getContacts=()=>{
-    fetch('/api/contacts')
+    window.fetch('/api/contacts')
       .then(res => res.json())
       .then(res => this.setState({ contacts : res.data }))
   }
   getDoorList=()=>{
-    fetch('/api/doors')
+    window.fetch('/api/doors')
       .then( res => res.json())
       .then( res => this.setState({ doors : res.data }))
   }
   getUsers=()=>{
-    fetch('/api/users')
+    window.fetch('/api/users')
       .then(res => res.json())
       .then(res => this.setState({users : res.data}))
   }
@@ -349,13 +349,13 @@ export default class App extends Component {
       made : 'cors',
       method : 'POST'
     };
-    fetch(url, options)
+    window.fetch(url, options)
       .then(res => res.json())
       .then(res => this.setState({addUserSuccess : res.data }))
   }
   getUserInfo=(username)=>{
   
-    fetch(`/api/user?username=${username}`)
+    window.fetch(`/api/user?username=${username}`)
       .then(res => res.json())
       .then(res =>{
         if(res.success){
@@ -373,7 +373,7 @@ export default class App extends Component {
       })
   }
   getEditableTrailers=()=>{
-    fetch('/api/edit/trailers')
+    window.fetch('/api/edit/trailers')
       .then( res => res.json())
       .then( res => this.setState({ editableTrailers : res.data }))
   }

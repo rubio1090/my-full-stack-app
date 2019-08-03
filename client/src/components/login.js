@@ -27,7 +27,7 @@ export default class Login extends Component{
       made : 'cors',
       method : 'POST'
     };
-    fetch(url, options)
+    window.fetch(url, options)
       .then(res => res.json())
       .then(res =>{
         if(res.success){
