@@ -90,7 +90,7 @@ export default class Edit extends Component{
     this.showTrailerModal();
   }
   deleteRecord=(obj, typ)=>{
-    let dlt = window.location.confirm(`Are you sure you want to delete ${typ} from the list?`);
+    let dlt = confirm(`Are you sure you want to delete ${typ} from the list?`);
     let url = `delete/${typ}`;
     let data = {
       id : Object.values(obj)[0]
