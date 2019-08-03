@@ -18,17 +18,17 @@ export default class Home extends Component{
   }
 
   getTrailersList=()=>{
-    fetch('http://127.0.0.1:3030/api/trailers')
+    fetch('/api/trailers')
       .then( res => res.json())
       .then( res => this.setState({ trailers : res.data }))
   }
   getDoorList=()=>{
-    fetch('http://127.0.0.1:3030/api/doors')
+    fetch('/api/doors')
       .then( res => res.json())
       .then( res => this.setState({ doors : res.data }))
   }
   updateDestination=(tr,e)=>{
-    const url = 'http://127.0.0.1:3030/add/destination';
+    const url = '/add/destination';
     const data = {
       trailerId : tr,
       dest_door_id : e.target.value

@@ -55,7 +55,7 @@ export default class Edit extends Component{
     })
   }
   sendUpdate=(endpoint, dataLoad, msg)=>{
-    const url = `http://127.0.0.1:3030/api/${endpoint}`;
+    const url = `/api/${endpoint}`;
     const data = dataLoad;
     const options = { 
       headers : {'content-type' : 'application/json; charset=UTF-8'},
