@@ -170,11 +170,12 @@ export default class Trailer extends Component{
       trailerId : this.props.trailer.TRAILER_ID,
       isEmpty : this.props.trailer.IS_EMPTY
     }
-    this.sendUpdate('arrivalts', data)
-      this.props.refreshList()
-      this.props.refreshDoors()
-      this.props.trailer.IS_EMPTY === 1 ? this.setState({ waveValue : ""}) : null
-    
+    this.sendUpdate('arrivalts', data);
+    this.props.refreshList();
+    this.props.refreshDoors();
+    if(this.props.trailer.IS_EMPTY === 1){
+      this.setState({ waveValue : ""});
+    }
   }
   offloadStartTimestamp=()=>{
     let timestamp = moment().format('YYYY-MM-DD HH:mm:ss');
